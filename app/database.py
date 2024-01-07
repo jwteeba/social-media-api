@@ -7,12 +7,12 @@ from fastapi import Depends
 from typing_extensions import Annotated
 
 
-@lru_cache
-def get_settings():
-    return config.Settings()
+# @lru_cache
+# def get_settings():
+#     return config.Settings()
 
 
-settings = get_settings()
+settings = config.Settings()
 
 CONN_URL = URL.create(
     drivername=settings.drivername,
