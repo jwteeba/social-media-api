@@ -6,13 +6,10 @@ from functools import lru_cache
 from fastapi import Depends
 from typing_extensions import Annotated
 
-
-# @lru_cache
-# def get_settings():
-#     return config.Settings()
+from app.utils import get_settings
 
 
-settings = config.Settings()
+settings = get_settings()
 
 CONN_URL = URL.create(
     drivername=settings.drivername,
